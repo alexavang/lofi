@@ -1,0 +1,263 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Orbitron", sans-serif;
+  transition: all 0.4s ease;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-image: url("images/1.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+section {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+/* This is for the time background */
+section .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 220px;
+  max-width: 560px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  position: relative;
+}
+/* This is for the time background */
+section.dark .container {
+  background: rgba(0, 0, 0, 0.1);
+}
+/* This is for the time background */
+section .container .icons i {
+  position: absolute;
+  right: 17px;
+  top: 17px;
+  height: 30px;
+  width: 30px;
+  background: #24292d;
+  color: #fff;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 50%;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+section.dark .container .icons i {
+  background: #fff;
+  color: #323840;
+}
+
+.container .icons i.fa-sun {
+  opacity: 0;
+  pointer-events: none;
+}
+
+section.dark .container .icons i.fa-sun {
+  opacity: 1;
+  pointer-events: auto;
+  font-size: 16px;
+}
+
+section .container .time {
+  display: flex;
+  align-items: center;
+}
+
+.container .time .time-colon {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.time .time-colon .am_pm {
+  position: absolute;
+  top: 0;
+  right: -50px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+section.dark .time .time-colon .am_pm {
+  color: #fff;
+}
+/* This is for the time text background */
+.time .time-colon .time-text {
+  height: 100px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+/* This is for the time text background */
+section.dark .time .time-colon .time-text {
+  background: rgba(0, 0, 0, 0.2);
+}
+/* This is for the time text background */
+.time .time-colon .time-text,
+.time .time-colon .colon {
+  font-size: 35px;
+  font-weight: 600;
+}
+
+section.dark .time .time-text .num,
+section.dark .time .colon {
+  color: #fff;
+}
+
+.time .time-colon .colon {
+  font-size: 40px;
+  margin: 0 10px;
+}
+
+.time .time-colon .time-text .text {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+section.dark .time .time-colon .text {
+  color: #fff;
+}
+
+.container {
+  position: absolute;
+  top: -110px;
+  left: -275px;
+  transform: translate(-50%, -50%);
+}
+
+/* Music Player Styles */
+
+.music-wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Lato", sans-serif;
+  margin: 0;
+}
+
+.music-container {
+  background-color: rgba(128, 128, 128, 0.1);
+  border-radius: 15px;
+  box-shadow: 0 20px 20px 0 rgba(252, 169, 169, 0.6);
+  display: flex;
+  padding: 20px 30px;
+  position: relative;
+  z-index: 10;
+  top: -75vh;
+  right: -5vw;
+}
+
+.img-container {
+  position: relative;
+  width: 110px;
+}
+
+.img-container img {
+  border-radius: 50%;
+  object-fit: cover;
+  height: 110px;
+  width: inherit;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.action-btn {
+  background-color: rgba(128, 128, 128, 0);
+  border: 0;
+  color: #dfdbdf;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 10px;
+  margin: 0 20px;
+}
+
+.action-btn.action-btn-big {
+  color: #cdc2d0;
+  font-size: 30px;
+}
+
+.action-btn:focus {
+  outline: 0;
+}
+
+.music-info {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 15px 15px 0 0;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: calc(100% - 40px);
+  padding: 10px 10px 10px 150px;
+  opacity: 0;
+  transform: translateY(0%);
+  transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+  z-index: 0;
+}
+
+.music-container.play .music-info {
+  opacity: 1;
+  transform: translateY(-100%);
+}
+
+.music-info h4 {
+  margin: 0;
+}
+
+.progress-container {
+  background: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px 0;
+  height: 4px;
+  width: 100%;
+}
+
+.progress {
+  background-color: #fe8daa;
+  border-radius: 5px;
+  height: 100%;
+  width: 0%;
+  transition: width 0.1s linear;
+}
